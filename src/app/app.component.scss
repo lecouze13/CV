@@ -1,0 +1,632 @@
+// Couleurs thème Provence
+$lavande: #7B68BE;
+$lavande-clair: #B8A8E8;
+$ocre: #D4A373;
+$olive: #6B8E23;
+$beige: #F5E6C4;
+$marron: #5D4037;
+$blanc-casse: #FFFEF7;
+
+// Reset et conteneur principal
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cv-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, $beige 0%, lighten($beige, 5%) 100%);
+  min-height: 100vh;
+  color: $marron;
+}
+
+// ========== HEADER ==========
+.cv-header {
+  background: linear-gradient(135deg, $lavande 0%, $lavande-clair 100%);
+  color: white;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+  }
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .profile-image {
+    flex-shrink: 0;
+
+    .image-placeholder {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, $ocre, lighten($ocre, 10%));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .profile-info {
+    flex: 1;
+
+    .name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .job-title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+    }
+
+    .qualities {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+
+      .quality-badge {
+        background: rgba(255, 255, 255, 0.25);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+
+      .icon {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+// ========== CORPS DU CV ==========
+.cv-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+}
+
+// ========== SIDEBAR ==========
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cv-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.section-title {
+  font-size: 1.3rem;
+  color: $lavande;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid $lavande-clair;
+  padding-bottom: 0.75rem;
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  &.main-title {
+    font-size: 1.6rem;
+    color: $olive;
+    border-bottom-color: $olive;
+  }
+}
+
+// Langues
+.languages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .language-item {
+    .lang-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+
+      .lang-name {
+        font-weight: 600;
+        color: $marron;
+      }
+
+      .lang-level {
+        background: linear-gradient(135deg, $lavande, $lavande-clair);
+        color: white;
+        padding: 0.2rem 0.8rem;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+    }
+
+    .lang-detail {
+      font-size: 0.9rem;
+      color: lighten($marron, 20%);
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+// Centres d'intérêt
+.interests {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+
+  .interest-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem;
+    background: linear-gradient(135deg, lighten($beige, 3%), $beige);
+    border-radius: 8px;
+    border-left: 3px solid $olive;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, $olive, lighten($olive, 10%));
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .interest-icon {
+      font-size: 1.3rem;
+    }
+
+    .interest-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}
+
+// Compétences
+.skills-category {
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .category-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $olive;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: '▸';
+      color: $ocre;
+      font-size: 1.2rem;
+    }
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .skill-tag {
+      background: linear-gradient(135deg, $ocre, lighten($ocre, 10%));
+      color: white;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(135deg, darken($ocre, 5%), $ocre);
+      }
+    }
+  }
+}
+
+// ========== MAIN CONTENT ==========
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+// Timeline (Formation)
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, $olive 0%, $lavande 100%);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -2.3rem;
+      top: 0;
+      width: 3rem;
+      height: 3rem;
+      background: white;
+      border: 3px solid $olive;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-content {
+      background: lighten($beige, 5%);
+      padding: 1.25rem;
+      border-radius: 10px;
+      border-left: 4px solid $olive;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $olive;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-subtitle {
+        font-size: 1rem;
+        color: $marron;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-period {
+        font-size: 0.9rem;
+        color: lighten($marron, 20%);
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// Expériences
+.experiences {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .experience-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      border-color: $lavande;
+      box-shadow: 0 6px 25px rgba(123, 104, 190, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .exp-header {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+
+      .exp-icon {
+        font-size: 2.5rem;
+        flex-shrink: 0;
+      }
+
+      .exp-info {
+        flex: 1;
+
+        .exp-title {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: $lavande;
+          margin-bottom: 0.5rem;
+        }
+
+        .exp-company {
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: $olive;
+          margin-bottom: 0.25rem;
+        }
+
+        .exp-period {
+          font-size: 0.9rem;
+          color: lighten($marron, 20%);
+          font-style: italic;
+        }
+      }
+    }
+
+    .exp-body {
+      .exp-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: $marron;
+        margin-bottom: 0.75rem;
+      }
+
+      .exp-tech {
+        font-size: 0.95rem;
+        color: lighten($marron, 10%);
+        padding: 0.75rem;
+        background: lighten($beige, 5%);
+        border-radius: 8px;
+        border-left: 3px solid $ocre;
+        margin-bottom: 0.75rem;
+
+        strong {
+          color: $ocre;
+        }
+      }
+
+      .exp-link {
+        margin-top: 1rem;
+
+        .link-button {
+          background: linear-gradient(135deg, $olive, lighten($olive, 10%));
+          color: white;
+          border: none;
+          padding: 0.75rem 1.5rem;
+          border-radius: 25px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+          &:hover {
+            background: linear-gradient(135deg, darken($olive, 5%), $olive);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========== FOOTER ==========
+.cv-footer {
+  background: linear-gradient(135deg, $marron 0%, darken($marron, 10%) 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+}
+
+// ========== RESPONSIVE ==========
+@media (max-width: 992px) {
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-header {
+    .profile-section {
+      flex-direction: column;
+      text-align: center;
+
+      .profile-info {
+        .qualities {
+          justify-content: center;
+        }
+      }
+    }
+
+    .contact-info {
+      grid-template-columns: 1fr;
+      text-align: center;
+
+      .contact-item {
+        justify-content: center;
+      }
+    }
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .main-content {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-header {
+    padding: 2rem 1rem;
+
+    .profile-info {
+      .name {
+        font-size: 2rem;
+      }
+
+      .job-title {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .cv-body {
+    padding: 1rem;
+  }
+
+  .cv-grid {
+    gap: 1.5rem;
+  }
+
+  .interests {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+
+    &.main-title {
+      font-size: 1.3rem;
+    }
+  }
+
+  .timeline {
+    padding-left: 2rem;
+
+    &::before {
+      left: 1rem;
+    }
+
+    .timeline-item {
+      .timeline-marker {
+        left: -1.8rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    .image-placeholder {
+      width: 100px !important;
+      height: 100px !important;
+      font-size: 2.5rem !important;
+    }
+  }
+
+  .cv-header {
+    .profile-info {
+      .name {
+        font-size: 1.6rem;
+      }
+
+      .job-title {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .experience-card {
+    .exp-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}

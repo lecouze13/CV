@@ -1,0 +1,184 @@
+<div class="cv-container">
+  <!-- Header avec fond lavande -->
+  <header class="cv-header">
+    <div class="header-content">
+      <div class="profile-section">
+        <div class="profile-image">
+          <div class="image-placeholder">LG</div>
+        </div>
+        <div class="profile-info">
+          <h1 class="name">{{ personalInfo.name }}</h1>
+          <h2 class="job-title">{{ personalInfo.title }}</h2>
+          <div class="qualities">
+            <span *ngFor="let quality of qualities" class="quality-badge">{{ quality }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="icon">📍</span>
+          <span>{{ personalInfo.location }}</span>
+        </div>
+        <!-- <div class="contact-item">
+          <span class="icon">📞</span>
+          <span>{{ personalInfo.phone }}</span>
+        </div> -->
+        <div class="contact-item">
+          <span class="icon">✉️</span>
+          <span>{{ personalInfo.email }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">🎂</span>
+          <span>{{ personalInfo.age }} ans</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Corps du CV -->
+  <main class="cv-body">
+    <div class="cv-grid">
+
+      <!-- Colonne gauche -->
+      <aside class="sidebar">
+
+        <!-- Langues -->
+        <section class="cv-section">
+          <h3 class="section-title">
+            <span class="icon">🌍</span>
+            Langues
+          </h3>
+          <div class="languages">
+            <div *ngFor="let lang of languages" class="language-item">
+              <div class="lang-header">
+                <span class="lang-name">{{ lang.name }}</span>
+                <span class="lang-level">{{ lang.level }}</span>
+              </div>
+              <div *ngIf="lang.detail" class="lang-detail">{{ lang.detail }}</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Centres d'intérêt -->
+        <section class="cv-section">
+          <h3 class="section-title">
+            <span class="icon">❤️</span>
+            Centres d'intérêt
+          </h3>
+          <div class="interests">
+            <div *ngFor="let interest of interests" class="interest-item">
+              <span class="interest-icon">{{ interest.icon }}</span>
+              <span class="interest-name">{{ interest.name }}</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Compétences techniques -->
+        <section class="cv-section">
+          <h3 class="section-title">
+            <span class="icon">💻</span>
+            Compétences
+          </h3>
+
+          <div class="skills-category">
+            <h4 class="category-title">Front-End Web</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.frontend" class="skill-tag">{{ skill }}</span>
+            </div>
+          </div>
+
+          <div class="skills-category">
+            <h4 class="category-title">Back-End Web</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.backend" class="skill-tag">{{ skill }}</span>
+            </div>
+          </div>
+
+          <div class="skills-category">
+            <h4 class="category-title">Base de Données</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.database" class="skill-tag">{{ skill }}</span>
+            </div>
+          </div>
+
+          <div class="skills-category">
+            <h4 class="category-title">Logiciel</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.software" class="skill-tag">{{ skill }}</span>
+            </div>
+          </div>
+
+          <div class="skills-category">
+            <h4 class="category-title">Mobile</h4>
+            <div class="skill-tags">
+              <span *ngFor="let skill of skills.mobile" class="skill-tag">{{ skill }}</span>
+            </div>
+          </div>
+        </section>
+
+      </aside>
+
+      <!-- Colonne principale -->
+      <div class="main-content">
+
+        <!-- Formation -->
+        <section class="cv-section">
+          <h3 class="section-title main-title">
+            <span class="icon">🎓</span>
+            Formation / Diplômes
+          </h3>
+
+          <div class="timeline">
+            <div *ngFor="let edu of education" class="timeline-item">
+              <div class="timeline-marker">{{ edu.icon }}</div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">{{ edu.degree }}</h4>
+                <div class="timeline-subtitle">{{ edu.school }} - {{ edu.location }}</div>
+                <div class="timeline-period">{{ edu.period }}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Expériences -->
+        <section class="cv-section">
+          <h3 class="section-title main-title">
+            <span class="icon">💼</span>
+            Expériences
+          </h3>
+
+          <div class="experiences">
+            <div *ngFor="let exp of experiences" class="experience-card">
+              <div class="exp-header">
+                <div class="exp-icon">{{ exp.icon }}</div>
+                <div class="exp-info">
+                  <h4 class="exp-title">{{ exp.title }}</h4>
+                  <div class="exp-company">{{ exp.company }}</div>
+                  <div class="exp-period">{{ exp.period }}</div>
+                </div>
+              </div>
+              <div class="exp-body">
+                <p class="exp-description">{{ exp.description }}</p>
+                <div *ngIf="exp.technologies" class="exp-tech">
+                  <strong>Technologies :</strong> {{ exp.technologies }}
+                </div>
+                <div *ngIf="exp.link" class="exp-link">
+                  <button (click)="openLink(exp.link)" class="link-button">
+                    🔗 Visiter le site
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="cv-footer">
+    <p>&copy; 2025 {{ personalInfo.name }} - Tous droits réservés</p>
+  </footer>
+</div>
