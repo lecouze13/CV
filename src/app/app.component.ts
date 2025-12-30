@@ -52,38 +52,54 @@ export class AppComponent {
   // Expériences
   experiences = [
     {
+      title: 'Ingénieur conception logiciel',
+      company: 'SCALIAN',
+      period: 'Octobre 2024 - Présent',
+      description: "Conception et développement de solutions logicielles pour des projets clients dans divers secteurs industriels. Participation à l'analyse des besoins, à la conception d'architectures logicielles et à l'implémentation de solutions techniques robustes. Travail en équipe agile avec méthodologies Scrum.",
+      technologies: 'Stack technique variable selon les projets clients',
+      icon: '💼'
+    },
+    {
       title: 'Stage ingénieur développement logiciels',
       company: 'Airbus Hélicoptères',
       period: 'Février 2024 - Août 2024',
-      description: "Développement d'une application web permettant de voir l'ensemble des paramètres mesurés pour chaque hélicoptère.",
-      technologies: 'Vue, Node.js, Quasar et SQL Server',
+      description: "Développement d'une application web full-stack pour la visualisation et l'analyse des paramètres de vol mesurés pour chaque hélicoptère. Mise en place d'une interface intuitive permettant aux ingénieurs de suivre en temps réel les performances des appareils. Intégration de dashboards interactifs avec graphiques dynamiques pour faciliter la prise de décision.",
+      technologies: 'Vue.js, Node.js, Quasar Framework, SQL Server',
       icon: '🚁'
     },
     {
       title: 'Stage assistant ingénieur',
-      company: 'CNRS',
+      company: 'CNRS (Centre National de la Recherche Scientifique)',
       period: 'Juin 2023 - Août 2023',
-      description: "Développement d'une application web permettant de voir l'évolution des bâtiments historiques de France.",
-      technologies: 'JavaScript, PHP et JQuery',
+      description: "Développement d'une plateforme web dédiée à la visualisation de l'évolution historique des bâtiments patrimoniaux français. Création d'interfaces interactives permettant aux chercheurs de consulter et comparer les transformations architecturales au fil du temps. Intégration de données historiques et de cartographies dynamiques.",
+      technologies: 'JavaScript, PHP, jQuery, HTML/CSS',
       icon: '🏛️'
     },
     {
-      title: "Création d'une application web de cuisine",
+      title: "Application de Partage de Recettes",
       company: 'Projet personnel',
       period: '2024',
-      description: 'Application complète de partage de recettes avec recommandations IA et recherche intelligente.',
-      technologies: 'Angular, Spring Boot, MySQL, Gemini AI',
+      description: "Plateforme complète de partage de recettes de cuisine avec fonctionnalités avancées : système de recommandations personnalisées basé sur l'IA (analyse des notes et favoris), recherche intelligente de recettes par critères (ingrédients, régime alimentaire, pays d'origine) utilisant l'API Gemini AI, gestion des utilisateurs avec authentification JWT, système de notation et favoris. Interface moderne et responsive.",
+      technologies: 'Angular, Spring Boot, MySQL, JWT Security, Gemini AI API',
       link: 'https://lorenzogeano.com',
       icon: '🍳'
     },
     {
-      title: 'Calculateur Finance',
+      title: 'Calculateur Financier',
       company: 'Projet personnel',
       period: '2024',
-      description: 'Application web de calculs financiers et de gestion budgétaire.',
-      technologies: 'Technologies web modernes',
+      description: "Application web de gestion financière personnelle offrant divers outils de calcul : simulateur de prêt immobilier avec tableau d'amortissement, calculateur d'épargne et d'investissement, analyse de budget mensuel, simulateur de crédit à la consommation. Interface intuitive avec graphiques et visualisations pour faciliter la planification financière.",
+      technologies: 'Technologies web full-stack modernes',
       link: 'https://calculateurfinance.fr',
       icon: '💰'
+    },
+    {
+      title: 'Equipier Polyvalent',
+      company: 'McDonalds',
+      period: 'Février 2022 - Août 2022',
+      description: 'Service client en restauration rapide. Gestion des commandes, préparation, travail en équipe dans un environnement dynamique.',
+      technologies: '',
+      icon: '🍔'
     }
   ];
 

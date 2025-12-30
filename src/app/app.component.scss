@@ -2,21 +2,20 @@
 $lavande: #7B68BE;
 $lavande-clair: #B8A8E8;
 $ocre: #D4A373;
+$ocre-clair: #E0B894;
+$ocre-fonce: #C89766;
 $olive: #6B8E23;
+$olive-clair: #82A73D;
+$olive-fonce: #5F7D1F;
 $beige: #F5E6C4;
+$beige-clair: #F9F0DC;
 $marron: #5D4037;
-$blanc-casse: #FFFEF7;
-
-// Reset et conteneur principal
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+$marron-clair: #8B6F67;
+$marron-fonce: #4A3329;
 
 .cv-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, $beige 0%, lighten($beige, 5%) 100%);
+  background: linear-gradient(135deg, $beige, $beige-clair);
   min-height: 100vh;
   color: $marron;
 }
@@ -66,23 +65,19 @@ $blanc-casse: #FFFEF7;
     margin-bottom: 2rem;
   }
 
-  .profile-image {
-    flex-shrink: 0;
-
-    .image-placeholder {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(135deg, $ocre, lighten($ocre, 10%));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      font-weight: bold;
-      color: white;
-      border: 5px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
+  .profile-image .image-placeholder {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, $ocre, $ocre-clair);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
 
   .profile-info {
@@ -221,7 +216,7 @@ $blanc-casse: #FFFEF7;
 
     .lang-detail {
       font-size: 0.9rem;
-      color: lighten($marron, 20%);
+      color: $marron-clair;
       margin-left: 0.5rem;
     }
   }
@@ -238,13 +233,13 @@ $blanc-casse: #FFFEF7;
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem;
-    background: linear-gradient(135deg, lighten($beige, 3%), $beige);
+    background: linear-gradient(135deg, $beige-clair, $beige);
     border-radius: 8px;
     border-left: 3px solid $olive;
     transition: all 0.3s ease;
 
     &:hover {
-      background: linear-gradient(135deg, $olive, lighten($olive, 10%));
+      background: linear-gradient(135deg, $olive, $olive-clair);
       color: white;
       transform: translateX(5px);
     }
@@ -290,7 +285,7 @@ $blanc-casse: #FFFEF7;
     gap: 0.5rem;
 
     .skill-tag {
-      background: linear-gradient(135deg, $ocre, lighten($ocre, 10%));
+      background: linear-gradient(135deg, $ocre, $ocre-clair);
       color: white;
       padding: 0.4rem 0.9rem;
       border-radius: 20px;
@@ -302,7 +297,7 @@ $blanc-casse: #FFFEF7;
       &:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        background: linear-gradient(135deg, darken($ocre, 5%), $ocre);
+        background: linear-gradient(135deg, $ocre-fonce, $ocre);
       }
     }
   }
@@ -355,7 +350,7 @@ $blanc-casse: #FFFEF7;
     }
 
     .timeline-content {
-      background: lighten($beige, 5%);
+      background: $beige-clair;
       padding: 1.25rem;
       border-radius: 10px;
       border-left: 4px solid $olive;
@@ -381,7 +376,7 @@ $blanc-casse: #FFFEF7;
 
       .timeline-period {
         font-size: 0.9rem;
-        color: lighten($marron, 20%);
+        color: $marron-clair;
         font-style: italic;
       }
     }
@@ -438,7 +433,7 @@ $blanc-casse: #FFFEF7;
 
         .exp-period {
           font-size: 0.9rem;
-          color: lighten($marron, 20%);
+          color: $marron-clair;
           font-style: italic;
         }
       }
@@ -454,9 +449,9 @@ $blanc-casse: #FFFEF7;
 
       .exp-tech {
         font-size: 0.95rem;
-        color: lighten($marron, 10%);
+        color: #7A5E57;
         padding: 0.75rem;
-        background: lighten($beige, 5%);
+        background: $beige-clair;
         border-radius: 8px;
         border-left: 3px solid $ocre;
         margin-bottom: 0.75rem;
@@ -470,7 +465,7 @@ $blanc-casse: #FFFEF7;
         margin-top: 1rem;
 
         .link-button {
-          background: linear-gradient(135deg, $olive, lighten($olive, 10%));
+          background: linear-gradient(135deg, $olive, $olive-clair);
           color: white;
           border: none;
           padding: 0.75rem 1.5rem;
@@ -482,7 +477,7 @@ $blanc-casse: #FFFEF7;
           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 
           &:hover {
-            background: linear-gradient(135deg, darken($olive, 5%), $olive);
+            background: linear-gradient(135deg, $olive-fonce, $olive);
             transform: translateY(-2px);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
           }
@@ -498,7 +493,7 @@ $blanc-casse: #FFFEF7;
 
 // ========== FOOTER ==========
 .cv-footer {
-  background: linear-gradient(135deg, $marron 0%, darken($marron, 10%) 100%);
+  background: linear-gradient(135deg, $marron 0%, $marron-fonce 100%);
   color: white;
   text-align: center;
   padding: 2rem;
@@ -512,6 +507,20 @@ $blanc-casse: #FFFEF7;
 }
 
 // ========== RESPONSIVE ==========
+
+// Tablettes paysage et petits ordinateurs portables
+@media (max-width: 1200px) {
+  .cv-grid {
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+  }
+
+  .cv-section {
+    padding: 1.25rem;
+  }
+}
+
+// Tablettes portrait
 @media (max-width: 992px) {
   .cv-grid {
     grid-template-columns: 1fr;
@@ -530,8 +539,8 @@ $blanc-casse: #FFFEF7;
     }
 
     .contact-info {
-      grid-template-columns: 1fr;
-      text-align: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
 
       .contact-item {
         justify-content: center;
@@ -546,8 +555,15 @@ $blanc-casse: #FFFEF7;
   .main-content {
     order: 1;
   }
+
+  .experience-card {
+    .exp-header {
+      gap: 0.75rem;
+    }
+  }
 }
 
+// Mobiles grands formats (paysage)
 @media (max-width: 768px) {
   .cv-header {
     padding: 2rem 1rem;
@@ -560,6 +576,11 @@ $blanc-casse: #FFFEF7;
       .job-title {
         font-size: 1.2rem;
       }
+    }
+
+    .contact-info {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
     }
   }
 
@@ -599,34 +620,368 @@ $blanc-casse: #FFFEF7;
       }
     }
   }
-}
 
-@media (max-width: 480px) {
-  .profile-image {
-    .image-placeholder {
-      width: 100px !important;
-      height: 100px !important;
-      font-size: 2.5rem !important;
+  .experience-card {
+    padding: 1.25rem;
+
+    .exp-header {
+      gap: 0.75rem;
+
+      .exp-icon {
+        font-size: 2rem;
+      }
+
+      .exp-info {
+        .exp-title {
+          font-size: 1.15rem;
+        }
+
+        .exp-company {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .exp-body {
+      .exp-description {
+        font-size: 0.95rem;
+      }
     }
   }
 
+  .skill-tags {
+    .skill-tag {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+    }
+  }
+}
+
+// Mobiles standards (portrait)
+@media (max-width: 576px) {
   .cv-header {
+    padding: 1.5rem 1rem;
+
+    .profile-image {
+      .image-placeholder {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+      }
+    }
+
     .profile-info {
       .name {
-        font-size: 1.6rem;
+        font-size: 1.75rem;
+      }
+
+      .job-title {
+        font-size: 1.1rem;
+      }
+
+      .qualities {
+        .quality-badge {
+          font-size: 0.85rem;
+          padding: 0.35rem 0.85rem;
+        }
+      }
+    }
+
+    .contact-info {
+      .contact-item {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .cv-section {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+
+    &.main-title {
+      font-size: 1.2rem;
+    }
+  }
+
+  .experience-card {
+    padding: 1rem;
+
+    .exp-body {
+      .link-button {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Très petits mobiles
+@media (max-width: 400px) {
+  .cv-header {
+    padding: 1rem 0.75rem;
+
+    .profile-image {
+      .image-placeholder {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+      }
+    }
+
+    .profile-info {
+      .name {
+        font-size: 1.5rem;
       }
 
       .job-title {
         font-size: 1rem;
       }
+
+      .qualities {
+        gap: 0.5rem;
+
+        .quality-badge {
+          font-size: 0.75rem;
+          padding: 0.3rem 0.7rem;
+        }
+      }
+    }
+
+    .contact-info {
+      .contact-item {
+        font-size: 0.85rem;
+
+        .icon {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .cv-body {
+    padding: 0.75rem;
+  }
+
+  .cv-section {
+    padding: 0.85rem;
+  }
+
+  .section-title {
+    font-size: 0.95rem;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+
+    &.main-title {
+      font-size: 1.1rem;
     }
   }
 
   .experience-card {
+    padding: 0.85rem;
+
     .exp-header {
       flex-direction: column;
       align-items: center;
       text-align: center;
+
+      .exp-icon {
+        font-size: 2rem;
+      }
+
+      .exp-info {
+        .exp-title {
+          font-size: 1.1rem;
+        }
+
+        .exp-company {
+          font-size: 0.95rem;
+        }
+
+        .exp-period {
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .exp-body {
+      .exp-description {
+        font-size: 0.9rem;
+      }
+
+      .exp-tech {
+        font-size: 0.85rem;
+        padding: 0.6rem;
+      }
+
+      .link-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+
+    &::before {
+      left: 0.75rem;
+      width: 2px;
+    }
+
+    .timeline-item {
+      .timeline-marker {
+        left: -1.5rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+        border-width: 2px;
+      }
+
+      .timeline-content {
+        padding: 1rem;
+
+        .timeline-title {
+          font-size: 1.05rem;
+        }
+
+        .timeline-subtitle {
+          font-size: 0.9rem;
+        }
+
+        .timeline-period {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  .language-item {
+    .lang-header {
+      .lang-name {
+        font-size: 0.9rem;
+      }
+
+      .lang-level {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.6rem;
+      }
+    }
+
+    .lang-detail {
+      font-size: 0.85rem;
+    }
+  }
+
+  .interest-item {
+    padding: 0.5rem;
+
+    .interest-icon {
+      font-size: 1.1rem;
+    }
+
+    .interest-name {
+      font-size: 0.85rem;
+    }
+  }
+
+  .skill-tags {
+    .skill-tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.65rem;
+    }
+  }
+
+  .category-title {
+    font-size: 0.9rem;
+  }
+
+  .cv-footer {
+    padding: 1.5rem 1rem;
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Grands écrans
+@media (min-width: 1400px) {
+  .cv-header {
+    .profile-image {
+      .image-placeholder {
+        width: 140px;
+        height: 140px;
+        font-size: 3.5rem;
+      }
+    }
+
+    .profile-info {
+      .name {
+        font-size: 2.75rem;
+      }
+
+      .job-title {
+        font-size: 1.65rem;
+      }
+    }
+  }
+
+  .cv-grid {
+    grid-template-columns: 380px 1fr;
+    gap: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+
+    &.main-title {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+// Mode paysage pour mobiles
+@media (max-height: 600px) and (orientation: landscape) {
+  .cv-header {
+    padding: 1rem;
+
+    .profile-section {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    .profile-image {
+      .image-placeholder {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+      }
+    }
+
+    .profile-info {
+      text-align: left;
+
+      .name {
+        font-size: 1.4rem;
+      }
+
+      .job-title {
+        font-size: 1rem;
+      }
+
+      .qualities {
+        justify-content: flex-start;
+      }
+    }
+
+    .contact-info {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
