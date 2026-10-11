@@ -1,6 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+interface CvEntry {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  technologies: string;
+  icon: string;
+  link?: string;
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -42,21 +52,20 @@ export class AppComponent {
 
   // Compétences
   skills = {
-    frontend: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Angular', 'Vue', 'Quasar', 'Bootstrap', 'JQuery'],
+    frontend: ['JavaScript', 'TypeScript', 'React', 'Angular', 'Vue', 'Quasar', 'Astro', 'Preact', 'Tailwind CSS', 'AppScript', 'GoogleScript', 'Electron'],
     backend: ['Django', 'Node.js (Express)', 'PHP', 'Spring'],
     database: ['MySQL', 'MongoDB', 'SQL Server'],
-    software: ['C', 'C++', 'Java'],
-    mobile: ['Flutter', 'React Native']
+    software: ['Java'],
   };
 
   // Expériences
-  experiences = [
+  experiences: CvEntry[] = [
     {
       title: 'Ingénieur conception logiciel',
       company: 'SCALIAN',
       period: 'Octobre 2024 - Présent',
-      description: "Conception et développement de solutions logicielles pour des projets clients dans divers secteurs industriels. Participation à l'analyse des besoins, à la conception d'architectures logicielles et à l'implémentation de solutions techniques robustes. Travail en équipe agile avec méthodologies Scrum.",
-      technologies: 'Stack technique variable selon les projets clients',
+      description: "Conception et développement de solutions logicielles pour les projets Airbus Hélicoptères. Participation à l'analyse des besoins, à la conception d'architectures logicielles et à l'implémentation de solutions techniques robustes pour le secteur aéronautique. Travail en équipe agile avec méthodologies Scrum.",
+      technologies: 'Stack technique adaptée aux projets Airbus Hélicoptères',
       icon: '💼'
     },
     {
@@ -76,6 +85,43 @@ export class AppComponent {
       icon: '🏛️'
     },
     {
+      title: 'Equipier Polyvalent',
+      company: 'McDonalds',
+      period: 'Février 2022 - Août 2022',
+      description: 'Service client en restauration rapide. Gestion des commandes, préparation, travail en équipe dans un environnement dynamique.',
+      technologies: '',
+      icon: '🍔'
+    }
+  ];
+
+  // Projets personnels
+  projects: CvEntry[] = [
+    {
+      title: 'SimulateurFinance',
+      company: 'Projet personnel',
+      period: 'Novembre 2024 - Présent',
+      description: "Site de plus de 200 simulateurs et calculateurs gratuits (prêt immobilier, impôts, salaire brut/net, aides sociales, frais de notaire, auto, santé...) fondés sur les barèmes officiels. Application Angular rendue côté serveur (SSR) avec plus de 1 000 pages prérendues pour le référencement naturel, tests unitaires lancés à chaque build, audits de fiabilité des formules et des taux, export des résultats. Plusieurs centaines de clics par jour depuis Google (Search Console, septembre 2026).",
+      technologies: 'Angular 18 (SSR, prérendu), TypeScript, PrimeNG, Chart.js, Karma/Jasmine, Cloudflare Workers, Google Search Console',
+      link: 'https://simulateurfinance.fr',
+      icon: '💰'
+    },
+    {
+      title: 'Mnemoz - Quiz de culture générale',
+      company: 'Projet personnel',
+      period: 'Septembre 2026 - Présent',
+      description: "Plateforme de QCM de culture générale en quatre langues (français, anglais, italien, espagnol) : plus de 1 000 pages de quiz organisées par thèmes, scores, historique et classements, comptes avec authentification JWT, création manuelle ou génération de quiz par IA (Gemini) relue par l'auteur avant publication, filtre anti-injures côté serveur. Pages publiques rendues côté serveur avec SEO complet (hreflang, JSON-LD, sitemap généré par l'API).",
+      technologies: 'Angular 22 (SSR), Spring Boot 3.5, MySQL, JWT Security, Gemini AI API',
+      icon: '🧠'
+    },
+    {
+      title: 'Calcul Mental',
+      company: 'Projet personnel',
+      period: 'Octobre 2026 - Présent',
+      description: "Site gratuit d'entraînement au calcul mental pour tous les âges : jeu chronométré (additions, soustractions, multiplications, divisions sur six niveaux), mode équations jusqu'à la Terminale (20 familles), test de niveau, 16 fiches d'astuces, plan de progression et fiches d'exercices imprimables avec corrigé. Pages 100 % statiques, thème clair/sombre piloté par variables CSS, progression gardée dans le navigateur sans inscription. Moteur de génération couvert par plus de 500 tests unitaires et par des tests de bout en bout. En cours de finalisation avant mise en ligne.",
+      technologies: 'Astro, Preact, TypeScript, Tailwind CSS, Vitest, Playwright, Cloudflare',
+      icon: '🧮'
+    },
+    {
       title: "Application de Partage de Recettes",
       company: 'Projet personnel',
       period: '2024',
@@ -83,23 +129,6 @@ export class AppComponent {
       technologies: 'Angular, Spring Boot, MySQL, JWT Security, Gemini AI API',
       link: 'https://lorenzogeano.com',
       icon: '🍳'
-    },
-    {
-      title: 'Calculateur Financier',
-      company: 'Projet personnel',
-      period: '2024',
-      description: "Application web de gestion financière personnelle offrant divers outils de calcul : simulateur de prêt immobilier avec tableau d'amortissement, calculateur d'épargne et d'investissement, analyse de budget mensuel, simulateur de crédit à la consommation. Interface intuitive avec graphiques et visualisations pour faciliter la planification financière.",
-      technologies: 'Technologies web full-stack modernes',
-      link: 'https://calculateurfinance.fr',
-      icon: '💰'
-    },
-    {
-      title: 'Equipier Polyvalent',
-      company: 'McDonalds',
-      period: 'Février 2022 - Août 2022',
-      description: 'Service client en restauration rapide. Gestion des commandes, préparation, travail en équipe dans un environnement dynamique.',
-      technologies: '',
-      icon: '🍔'
     }
   ];
 
@@ -115,7 +144,8 @@ export class AppComponent {
     { name: 'Sport', icon: '⚽' },
     { name: 'Nutrition', icon: '🥗' },
     { name: 'Cuisine', icon: '👨‍🍳' },
-    { name: 'Potager nourricier', icon: '🌱' }
+    { name: 'Potager nourricier', icon: '🌱' },
+    { name: 'Lecture', icon: '📚' }
   ];
 
   // Qualités

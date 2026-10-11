@@ -109,12 +109,7 @@
             </div>
           </div>
 
-          <div class="skills-category">
-            <h4 class="category-title">Mobile</h4>
-            <div class="skill-tags">
-              <span *ngFor="let skill of skills.mobile" class="skill-tag">{{ skill }}</span>
-            </div>
-          </div>
+       
         </section>
 
       </aside>
@@ -165,6 +160,38 @@
                 </div>
                 <div *ngIf="exp.link" class="exp-link">
                   <button (click)="openLink(exp.link)" class="link-button">
+                    🔗 Visiter le site
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projets personnels -->
+        <section class="cv-section">
+          <h3 class="section-title main-title">
+            <span class="icon">🚀</span>
+            Projets personnels
+          </h3>
+
+          <div class="experiences">
+            <div *ngFor="let project of projects" class="experience-card">
+              <div class="exp-header">
+                <div class="exp-icon">{{ project.icon }}</div>
+                <div class="exp-info">
+                  <h4 class="exp-title">{{ project.title }}</h4>
+                  <div class="exp-company">{{ project.company }}</div>
+                  <div class="exp-period">{{ project.period }}</div>
+                </div>
+              </div>
+              <div class="exp-body">
+                <p class="exp-description">{{ project.description }}</p>
+                <div *ngIf="project.technologies" class="exp-tech">
+                  <strong>Technologies :</strong> {{ project.technologies }}
+                </div>
+                <div *ngIf="project.link" class="exp-link">
+                  <button (click)="openLink(project.link)" class="link-button">
                     🔗 Visiter le site
                   </button>
                 </div>
