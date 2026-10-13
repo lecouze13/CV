@@ -111,14 +111,16 @@ export class AppComponent {
       period: 'Septembre 2026 - Présent',
       description: "Plateforme de QCM de culture générale en quatre langues (français, anglais, italien, espagnol) : plus de 1 000 pages de quiz organisées par thèmes, scores, historique et classements, comptes avec authentification JWT, création manuelle ou génération de quiz par IA (Gemini) relue par l'auteur avant publication, filtre anti-injures côté serveur. Pages publiques rendues côté serveur avec SEO complet (hreflang, JSON-LD, sitemap généré par l'API).",
       technologies: 'Angular 22 (SSR), Spring Boot 3.5, MySQL, JWT Security, Gemini AI API',
+      link: 'https://mnemoz.com',
       icon: '🧠'
     },
     {
-      title: 'Calcul Mental',
+      title: 'Calculer de tête',
       company: 'Projet personnel',
       period: 'Octobre 2026 - Présent',
       description: "Site gratuit d'entraînement au calcul mental pour tous les âges : jeu chronométré (additions, soustractions, multiplications, divisions sur six niveaux), mode équations jusqu'à la Terminale (20 familles), test de niveau, 16 fiches d'astuces, plan de progression et fiches d'exercices imprimables avec corrigé. Pages 100 % statiques, thème clair/sombre piloté par variables CSS, progression gardée dans le navigateur sans inscription. Moteur de génération couvert par plus de 500 tests unitaires et par des tests de bout en bout. En cours de finalisation avant mise en ligne.",
       technologies: 'Astro, Preact, TypeScript, Tailwind CSS, Vitest, Playwright, Cloudflare',
+      link: 'https://calculerdetete.fr',
       icon: '🧮'
     },
     {
@@ -127,7 +129,6 @@ export class AppComponent {
       period: '2024',
       description: "Plateforme complète de partage de recettes de cuisine avec fonctionnalités avancées : système de recommandations personnalisées basé sur l'IA (analyse des notes et favoris), recherche intelligente de recettes par critères (ingrédients, régime alimentaire, pays d'origine) utilisant l'API Gemini AI, gestion des utilisateurs avec authentification JWT, système de notation et favoris. Interface moderne et responsive.",
       technologies: 'Angular, Spring Boot, MySQL, JWT Security, Gemini AI API',
-      link: 'https://lorenzogeano.com',
       icon: '🍳'
     }
   ];
@@ -151,8 +152,6 @@ export class AppComponent {
   // Qualités
   qualities = ['Patience', 'Calme', 'Rationnel'];
 
-  // Méthode pour ouvrir un lien
-  openLink(url: string) {
-    window.open(url, '_blank');
-  }
+  // Projets en ligne, liés dans le pied de page (vrais liens <a>, suivis par les moteurs de recherche)
+  projectLinks = this.projects.filter(project => project.link);
 }

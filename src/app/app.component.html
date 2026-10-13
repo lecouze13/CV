@@ -159,9 +159,9 @@
                   <strong>Technologies :</strong> {{ exp.technologies }}
                 </div>
                 <div *ngIf="exp.link" class="exp-link">
-                  <button (click)="openLink(exp.link)" class="link-button">
+                  <a [href]="exp.link" target="_blank" rel="noopener" class="link-button">
                     🔗 Visiter le site
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -191,9 +191,9 @@
                   <strong>Technologies :</strong> {{ project.technologies }}
                 </div>
                 <div *ngIf="project.link" class="exp-link">
-                  <button (click)="openLink(project.link)" class="link-button">
-                    🔗 Visiter le site
-                  </button>
+                  <a [href]="project.link" target="_blank" rel="noopener" class="link-button">
+                    🔗 Visiter {{ project.title }}
+                  </a>
                 </div>
               </div>
             </div>
@@ -206,6 +206,10 @@
 
   <!-- Footer -->
   <footer class="cv-footer">
-    <p>&copy; 2025 {{ personalInfo.name }} - Tous droits réservés</p>
+    <nav *ngIf="projectLinks.length" class="footer-projects" aria-label="Mes projets">
+      <span>Mes projets :</span>
+      <a *ngFor="let project of projectLinks" [href]="project.link" target="_blank" rel="noopener">{{ project.title }}</a>
+    </nav>
+    <p>&copy; 2026 {{ personalInfo.name }} - Tous droits réservés</p>
   </footer>
 </div>
